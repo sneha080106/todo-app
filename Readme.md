@@ -24,10 +24,7 @@ A simple and beginner-friendly To-Do List mobile application built using **Java*
 
 ## 📸 Screenshots
 
-(Add your app screenshots here)
-
-Example:
-![App Screenshot](screenshots/screenshot1.png)
+![App Screenshot](Screenshot1.png.png)
 
 
 
