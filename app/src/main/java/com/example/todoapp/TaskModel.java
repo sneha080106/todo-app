@@ -10,4 +10,14 @@ public class TaskModel {
     public String getTask() {
         return task;
     }
+
+    private boolean isSelected = false;
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
 }

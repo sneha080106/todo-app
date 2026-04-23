@@ -19,7 +19,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
         TextView taskText;
 
         public ViewHolder(View itemView) {
@@ -31,17 +30,31 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.task_item, parent, false);
-
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         holder.taskText.setText(taskList.get(position).getTask());
+        TaskModel task = taskList.get(position);
+
+        holder.taskText.setText(task.getTask());
+
+        // ✅ Highlight selected
+        if (task.isSelected()) {
+            holder.itemView.setBackgroundColor(0xFFE0E0E0); // grey
+        } else {
+            holder.itemView.setBackgroundColor(0xFFFFFFFF); // white
+        }
+
+        // ✅ Long press to select
+        holder.itemView.setOnLongClickListener(v -> {
+            task.setSelected(!task.isSelected());
+            notifyItemChanged(position);
+            return true;
+        });
     }
 
     @Override

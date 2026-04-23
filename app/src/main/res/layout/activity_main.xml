@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="650dp"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -14,13 +15,22 @@
 
     <Button
         android:id="@+id/addButton"
-        android:layout_width="match_parent"
+        android:layout_width="161dp"
         android:layout_height="wrap_content"
         android:text="Add Task" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:layout_width="336dp"
+        android:layout_height="476dp" />
+
+    <Button
+        android:id="@+id/deleteBtn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_50dp"
+        android:text="Delete Selected"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </LinearLayout>
